@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import Navbar from './navbar';
 import './App.css';
+import Add from './Add';
+// import List from './List';
+import { Component, useState } from 'react';
 
 function App() {
+ let [content,changeContent]=useState({title:"", detail: " "});
+  let getAdd=(content)=>{
+    changeContent({title : content.title, detail: content.detail});
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <Navbar title="todo"/>
+    <p>{Component.title} {Component.detail}</p>
+    <Add  callback={getAdd }/>
+    {/* <List values={content}/> */}
+    </>
+      
+      );
 }
 
 export default App;
