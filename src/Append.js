@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-export default function Add(props) {
+export default function Append(props) {
     const customStyles = {
         color: '#555555',
         fontSize: '20px',

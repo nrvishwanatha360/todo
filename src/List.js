@@ -1,8 +1,7 @@
 import React from 'react'
 
 export default function List(props) {
-
-    
+        
   return (
             <div className="m-5">
             <table className="table">
@@ -17,8 +16,8 @@ export default function List(props) {
                 <tbody>
                     <tr>
                     <th scope="row">1</th>
-                    <td>{props.title}</td>
-                    <td>{props.detail}</td>
+                    <td>{props.values.title}</td>
+                    <td>{props.values.detail}</td>
                     <td>edit</td>
                     </tr>
                     <tr>
