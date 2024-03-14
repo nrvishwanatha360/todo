@@ -1,20 +1,37 @@
 import Navbar from './navbar';
 import './App.css';
-import Add from './Append';
 import List from './List';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
+import Append from './Append';
 
 function App() {
+
+   //storing the objects of contents
+  let [lst,changeLst]=useState([]);
+
   // getting title and details from the Append component
- let [content,changeContent]=useState({title:"", detail: " "});
+ let [content,changeContent]=useState({title:"", detail: "", actions: ""});
   let getAdd=(content)=>{
-    changeContent({title: content.title,detail:content.detail});
+    changeContent(prevState=>({
+      ...prevState,
+      ...content
+    
+    })
+    );
   }
+  // console.log(type(lst));
+  useEffect(() => {
+    // Check if content is not empty
+    if (content.title !== "" || content.detail !== "" || content.actions !== "") {
+      // Update lst state by appending the new content
+      changeLst(prevLst => [...prevLst, content]);
+    }
+  }, [content]);
   return (
     <>
     <Navbar title="todo"/>
-    <Add  callback={getAdd }/>
-    <List values={content}/>
+    <Append  callback={getAdd }/>
+    <List values={lst}/>
     </>
       
       );
