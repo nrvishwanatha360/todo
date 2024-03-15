@@ -27,11 +27,19 @@ function App() {
       changeLst(prevLst => [...prevLst, content]);
     }
   }, [content]);
+
+  let deleteLst=(index)=>{
+    let newLst=[...lst];
+    newLst.splice(index,1)
+    changeLst(newLst);
+   
+
+  }
   return (
     <>
     <Navbar title="todo"/>
     <Append  callback={getAdd }/>
-    <List values={lst}/>
+    <List values={lst} dlt={deleteLst}/>
     </>
       
       );
