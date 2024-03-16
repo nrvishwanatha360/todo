@@ -36,7 +36,7 @@ export default function Append(props) {
         </div>
 
         <div className="ms-5 me-5 mt-2 ">
-        <button type="button" className="btn btn-success" onClick={handleonClick} >ADD</button>
+        <button type="button" className="btn btn-success" onClick={handleonClick} >SAVE</button>
         </div>
 
         
